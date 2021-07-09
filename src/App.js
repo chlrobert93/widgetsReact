@@ -9,7 +9,7 @@ const items = [
 
     {
         title: 'Why use React?',
-        content: 'React is a favorite JS library among engineers'
+        content : 'React is a favorite JS library among engineers'
     },
 
     {
@@ -18,10 +18,13 @@ const items = [
     }
 ];
 
-export default () => {
+const funcApp =  () => {
     return(
         <div>
             <Accordion items={items}/>
         </div>
     );
 };
+
+
+export default funcApp;
