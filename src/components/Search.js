@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 const Search = () =>{
 
     //Neuvo state
     const [term, setTerm] = useState('');
+
+    useEffect(() => {
+        console.log('ABNM');    
+    });
   return (
         <div>
             <div className="ui form">
