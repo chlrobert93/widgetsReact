@@ -1,13 +1,17 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
 const Search = () =>{
 
     //Neuvo state
-    const [term, setTerm] = useState('');
+    const [term, setTerm] = useState(''); 
+      
+     useEffect( () =>  {
+         const search = async () => {
+           await axios.get('dds');
+         };
+     },[term]);
 
-    useEffect(() => {
-        console.log('ABNM');    
-    });
   return (
         <div>
             <div className="ui form">
