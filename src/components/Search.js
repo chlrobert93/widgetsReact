@@ -5,7 +5,7 @@ import axios from 'axios';
 const Search = () =>{
 
     //Neuvo state
-    const [term, setTerm] = useState(''); 
+    const [term, setTerm] = useState('programing'); 
     const [results, setResults] =  useState([]);
 
      console.log(results);
@@ -27,13 +27,27 @@ const Search = () =>{
         setResults(data.query.search);
      };
 
-    const timeoutId = setTimeout(() => {
-     
+   // const timeoutId = setTimeout(() => {
+     /*
       if(term) {
         search(); 
      }
      
      }, 1000);
+*/
+
+console.log(term);
+console.log(results.length);
+     if (term && !results.length) {	
+       
+      search();	
+    } else {	
+      console.log('ddd');
+      const timeoutId = setTimeout(() => {	
+        if (term) {	
+          search();	
+        }	
+      }, 1000);
    /*
      console.log('Initial render or term was changed');
 
@@ -45,8 +59,8 @@ const Search = () =>{
     return () => {
       clearTimeout(timeoutId);
     };
-
-    },[term]);
+  }
+},[term]);
 
 
     const renderResults = results.map((result) => {
