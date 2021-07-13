@@ -10,8 +10,9 @@ const Search = () =>{
 
      console.log(results);
 
+
      useEffect( () =>  {
-         const search = async () => {
+          const search = async () => {
           //Conectar con locaholts 3001 y ejecutar node indendes.js
           const {data} = await axios.get('https://en.wikipedia.org/w/api.php',{
            params:{
@@ -34,7 +35,13 @@ const Search = () =>{
      
      }, 500);
 
-      
+ /*
+     console.log('Initial render or term was changed');
+
+     return () => {
+       console.log('CLEANUP');
+     };
+  */   
     },[term]);
 
 
