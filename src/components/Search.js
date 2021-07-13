@@ -33,15 +33,19 @@ const Search = () =>{
         search(); 
      }
      
-     }, 500);
-
- /*
+     }, 1000);
+   /*
      console.log('Initial render or term was changed');
 
      return () => {
        console.log('CLEANUP');
      };
-  */   
+  */ 
+    //Se cansala ca vex que el usuario ingrsa un caracter el timepo asta el que deje de ingresar hse consulta
+    return () => {
+      clearTimeout(timeoutId);
+    };
+
     },[term]);
 
 
