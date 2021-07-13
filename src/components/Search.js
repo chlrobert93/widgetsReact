@@ -12,6 +12,7 @@ const Search = () =>{
 
      useEffect( () =>  {
          const search = async () => {
+          //Conectar con locaholts 3001 y ejecutar node indendes.js
           const {data} = await axios.get('https://en.wikipedia.org/w/api.php',{
            params:{
                action: 'query',
@@ -36,10 +37,8 @@ const Search = () =>{
         return (
             <div key={result.pageid} className="item">
               <div className="content">
-                <div className="header">
-                   {result.title}
-                </div>
-                {result.snippet}
+                <div className="header">{result.title}</div>
+                <span dangerouslySetInnerHTML={{__html: result.snippet}}></span>  
               </div>
             </div>
         );
