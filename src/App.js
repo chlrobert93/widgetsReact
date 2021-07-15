@@ -33,19 +33,36 @@ const options = [
         value: 'green'
     },
     {
-        label: 'A Shade of Blue',
+        label: 'The Color Blue',
         value: 'blue'
     }
 ];
 
+/*
 const funcApp =  () => {
 
+    selected----> podemos decirle a nuestro componenete de la aplicación que actualice su state seleccionado 
+   const [selected, setSelected] = useState(options[0]);
     return(
         <div>
-            <Dropdown options={options}/>
+            <Dropdown selected={selected} onSelectedChange={setSelected} options={options}/>
         </div>
     );
 };
 
 
-export default funcApp;
+export default funcApp;*/
+
+export default () => {
+
+    /*selected----> podemos decirle a nuestro componenete de la aplicación que actualice su state seleccionado */
+   const [selected, setSelected] = useState(options[0]);
+    return(
+        <div>
+            <Dropdown selected={selected} onSelectedChange={setSelected} options={options}/>
+        </div>
+    );
+};
+
+
+ 
