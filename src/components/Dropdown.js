@@ -6,7 +6,8 @@ const Dropdown = ({options, selected, onSelectedChange}) => {
 useEffect(() => {
   
     document.body.addEventListener('click', () => {
-         //console.log('CLICK!!');
+              
+        console.log('CLICK BODY!!');
               setOpen(false);
             },
             { capture: true }
@@ -28,7 +29,7 @@ useEffect(() => {
         }
     //Devolver bloque JSX
     return (
-        <div key={option.value}  className="item" onClick={() => onSelectedChange(option)}>
+        <div key={option.value}  className="item" onClick={() => {console.log('ITEM CLICKED'); onSelectedChange(option)}}>
          {option.label}
         </div>
     );
@@ -38,12 +39,12 @@ useEffect(() => {
 
 const opening = `${open ? 'visible active' : '' }`;
 
-
+console.log(!open);
     return (
         <div className="ui form">
             <div className="field">
               <label className="label">Select a Color</label>
-              <div onClick={() => setOpen(!open)} className={`ui selection dropdown ${opening}`}>
+              <div onClick={() => { console.log('DROPDOWN CLICKED'); setOpen(!open)}} className={`ui selection dropdown ${opening}`}>
                  <i className="dropdown icon"></i>
                  <div className="text">{selected.label}</div>
                  <div className={`menu ${open ? 'visible transition' : '' }`}>{renderedOptions}</div>
