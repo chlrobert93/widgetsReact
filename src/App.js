@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Accordion from './components/Accordion';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
+
 
 const items = [
     {
@@ -45,7 +47,7 @@ const funcApp =  () => {
    const [selected, setSelected] = useState(options[0]);
     return(
         <div>
-            <Dropdown selected={selected} onSelectedChange={setSelected} options={options}/>
+            <Dropdown selected={selected}   ={setSelected} options={options}/>
         </div>
     );
 };
@@ -53,13 +55,13 @@ const funcApp =  () => {
 
 export default funcApp;*/
 
-export default () => {
+//export default () => {
 
     /*selected----> podemos decirle a nuestro componenete de la aplicación que actualice su state seleccionado */
-   const [selected, setSelected] = useState(options[0]);
+   //const [selected, setSelected] = useState(options[0]);
    /*Para mostrar el menpu despegable*/
-   const [showDropdown, setShowDropdown] = useState(true);
-
+   //const [showDropdown, setShowDropdown] = useState(true);
+/*
     return(
         <div>
             
@@ -69,8 +71,16 @@ export default () => {
                : null
             }
         </div>
+  
     );
-};
+}; */
 
 
- 
+ export default () => {
+     return (
+
+        <div>
+            <Translate />
+        </div>
+     );
+ }
