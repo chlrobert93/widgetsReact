@@ -1,12 +1,18 @@
-import React,{ useState, useEffect} from 'react';
+import React,{ useState, useEffect, useRef} from 'react';
 
 const Dropdown = ({options, selected, onSelectedChange}) => {
     const [open, setOpen] = useState(false);
-    
+    const ref = useRef();   
+    console.log(ref);
 useEffect(() => {
   
-    document.body.addEventListener('click', () => {
-              
+    document.body.addEventListener('click', (event) => {  
+        //Cerrar menú despegable si se cumple retornamos
+        if(ref.current.contains(event.target)){
+           return;
+        }
+        console.log(event.target);
+    
         console.log('CLICK BODY!!');
               setOpen(false);
             },
@@ -35,13 +41,13 @@ useEffect(() => {
     );
 });
 
-
+//onsole.log(ref.current);
 
 const opening = `${open ? 'visible active' : '' }`;
 
 console.log(!open);
     return (
-        <div className="ui form">
+        <div ref={ref} className="ui form">
             <div className="field">
               <label className="label">Select a Color</label>
               <div onClick={() => { console.log('DROPDOWN CLICKED'); setOpen(!open)}} className={`ui selection dropdown ${opening}`}>
