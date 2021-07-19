@@ -57,9 +57,17 @@ export default () => {
 
     /*selected----> podemos decirle a nuestro componenete de la aplicación que actualice su state seleccionado */
    const [selected, setSelected] = useState(options[0]);
+   /*Para mostrar el menpu despegable*/
+   const [showDropdown, setShowDropdown] = useState(true);
+
     return(
         <div>
-            <Dropdown selected={selected} onSelectedChange={setSelected} options={options}/>
+            
+            <button onClick={() => setShowDropdown(!showDropdown)}>Toggle Dropdown</button>
+            {showDropdown ?
+                <Dropdown selected={selected} onSelectedChange={setSelected} options={options}/>
+               : null
+            }
         </div>
     );
 };

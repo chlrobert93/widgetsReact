@@ -4,21 +4,28 @@ const Dropdown = ({options, selected, onSelectedChange}) => {
     const [open, setOpen] = useState(false);
     const ref = useRef();   
     console.log(ref);
-useEffect(() => {
-  
-    document.body.addEventListener('click', (event) => {  
-        //Cerrar menú despegable si se cumple retornamos
-        if(ref.current.contains(event.target)){
-           return;
-        }
-        console.log(event.target);
-    
-        console.log('CLICK BODY!!');
-              setOpen(false);
-            },
-            { capture: true }
-          );
 
+    useEffect(() => {
+  
+        const onBodyClick = (event) => {
+            //Cerrar menú despegable si se cumple retornamos
+            console.log('aa')
+            if(ref.current.contains(event.target)){
+                return;
+                }
+                console.log(event.target);
+            
+                console.log('CLICK BODY!!');
+                    setOpen(false);
+                    };       
+            
+                 document.body.addEventListener("click", onBodyClick, { capture: true });
+                  
+                return () => {
+                 document.body.removeEventListener("click", onBodyClick,{ capture: true });  
+                          
+             
+            };
 },[]);       
 
 //[]  Queremos asegurarnos de que esta función de área aqui 
