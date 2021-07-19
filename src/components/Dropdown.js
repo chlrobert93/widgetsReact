@@ -63,6 +63,9 @@ console.log(!open);
                  <div className={`menu ${open ? 'visible transition' : '' }`}>{renderedOptions}</div>
               </div>
             </div>
+            <div>
+               <p style={{ color: selected.value}}>This text is {selected.value}</p>
+            </div>
         </div>
     );
  
