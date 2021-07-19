@@ -67,7 +67,7 @@ export default funcApp;*/
             
             <button onClick={() => setShowDropdown(!showDropdown)}>Toggle Dropdown</button>
             {showDropdown ?
-                <Dropdown selected={selected} onSelectedChange={setSelected} options={options}/>
+                <Dropdown label="This text is"" selected={selected} onSelectedChange={setSelected} options={options}/>
                : null
             }
         </div>
