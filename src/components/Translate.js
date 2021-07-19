@@ -15,7 +15,34 @@ const options = [
     {
         label: 'Hindi',
         value: 'hi'
+    },
+
+    {
+        label: 'French',
+        value: 'fr'
+    },
+
+    {
+        label: 'Italian',
+        value: 'it'
+    },
+
+    {
+        label: 'Japanese',
+        value: 'it'
+    },
+
+    {
+        label: 'Dutch',
+        value: 'nl'
+    },
+
+    {
+       label: 'Korean',
+       value: 'ko'
+         
     }
+
 ]
 
 const Translate = () => {
