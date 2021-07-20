@@ -30,7 +30,7 @@ const options = [
 
     {
         label: 'Japanese',
-        value: 'it'
+        value: 'ja'
     },
 
     {
@@ -67,4 +67,4 @@ const Translate = () => {
     )
 };
 
-export default Translate;
+export default Translate;   
