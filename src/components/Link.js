@@ -9,6 +9,9 @@ const Link = ({className, href, children}) => {
         event.preventDefault();
         //Actualizar la URL
         window.history.pushState({}, '', href);
+
+        const navEvent = new PopStateEvent('popstate');
+        window.dispatchEvent(navEvent);
     };
 
   return <a onClick={onClick} className={className} href={href}>{children}</a>;
