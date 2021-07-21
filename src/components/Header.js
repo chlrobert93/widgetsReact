@@ -1,20 +1,21 @@
 import React from 'react';
+import Link from './Link';
 
 const Header = () => {
     return (
         <div className="ui inverted menu">
-          <a href="/"  className="item">
+          <Link href="/"  className="violet item">
               Accordion
-          </a>
-          <a href="/list" className="item">
+          </Link>
+          <Link href="/list" className="violet item">
              Search
-          </a>
-          <a href="/dropdown" className="item">
+          </Link>
+          <Link href="/dropdown" className="violet item">
             Dropdown
-          </a>
-          <a href="/translate" className="item">
+          </Link>
+          <Link href="/translate" className="violet item">
             Translate
-          </a>
+          </Link>
         </div>
     )
 };
