@@ -4,6 +4,7 @@ import Search from './components/Search';
 import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
 import Route from './components/Route';
+import Header from './components/Header';
 
 
 const items = [
@@ -41,20 +42,6 @@ const options = [
     }
 ];
 
-/*
-const funcApp =  () => {
-
-    selected----> podemos decirle a nuestro componenete de la aplicación que actualice su state seleccionado 
-   const [selected, setSelected] = useState(options[0]);
-    return(
-        <div>
-            <Dropdown selected={selected}   ={setSelected} options={options}/>
-        </div>
-    );
-};
-
-
-export default funcApp;*/
 
 //export default () => {
 
@@ -76,26 +63,12 @@ export default funcApp;*/
     );
 }; */
 
-/*
-const showAccordion = () => {
-    if(window.location.pathname === '/'){
-        return <Accordion items={items}/>
-    }
-};
-*/
-
-/*
-const showComponent = (route, component) => {
-
-  return window.location.pathname === route ? component : null;
-
-};*/
-
  export default () => {
 
      const [selected, setSelected] = useState(options[0]);
      return (
         <div>
+            <Header />
             <Route path="/">
               <Accordion items={items}/>
             </Route>
