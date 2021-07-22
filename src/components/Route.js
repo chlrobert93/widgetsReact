@@ -1,10 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Route = ({ path, children}) => {
+   
+   //Es solo para que nuestra raiz se actualice
+   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+   
 
     useEffect(() => {
        const onLocationChange = () => {
-          console.log('Location change');
+          //Llamar la ruta y actualizarla
+          setCurrentPath(window.location.pathname);
        };
        
        //Escuchar un evento
@@ -18,7 +23,7 @@ const Route = ({ path, children}) => {
 
     //Recibimos path, children
     console.log(Route);
-    return window.location.pathname === path ? children : null;
+    return currentPath === path ? children : null;
 
 };
 
