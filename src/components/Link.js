@@ -4,14 +4,21 @@ import React from 'react';
 const Link = ({className, href, children}) => {
   
     const onClick = (event) => {
-        //Cuando el usuario hace clic en un elemento de anclaje es asegurarnos de que no realicemos una recarga completa de la
-        //Página
-        event.preventDefault();
-        //Actualizar la URL
-        window.history.pushState({}, '', href);
+     
+       //Abrir el boton en una nueva ventana ctrl + lick
+        if (event.metaKey || event.ctrlKey || event.shiftKey) {
+            return;
+        }
 
-        const navEvent = new PopStateEvent('popstate');
-        window.dispatchEvent(navEvent);
+         
+
+            //No realicemos una recarga completa de la página
+            event.preventDefault();
+            //Actualizar la URL
+            window.history.pushState({}, '', href);
+
+            const navEvent = new PopStateEvent('popstate');
+            window.dispatchEvent(navEvent);
     };
 
   return <a onClick={onClick} className={className} href={href}>{children}</a>;

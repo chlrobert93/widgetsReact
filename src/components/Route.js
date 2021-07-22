@@ -4,7 +4,7 @@ const Route = ({ path, children}) => {
    
    //Es solo para que nuestra raiz se actualice
    const [currentPath, setCurrentPath] = useState(window.location.pathname);
-   
+
 
     useEffect(() => {
        const onLocationChange = () => {
