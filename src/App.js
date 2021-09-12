@@ -5,6 +5,7 @@ import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
 import Route from './components/Route';
 import Header from './components/Header';
+import './stylo.css';
 
 
 const items = [
@@ -69,18 +70,27 @@ const options = [
      return (
         <div>
             <Header />
+        <div className="acordion">
             <Route path="/">
               <Accordion items={items}/>
             </Route>
+        </div>  
+ 
             <Route path="/list">
                 <Search />
             </Route>
+      
+         <div className="acordion"> 
             <Route path="/dropdown">
                <Dropdown label="Select a color" options={options} selected={selected}  onSelectedChange={setSelected} />
             </Route>
+         </div>
+         <div className="acordion">
             <Route path="/translate">
                 <Translate />
+                <Accordion items={items}/>
             </Route>
+          </div>
         </div>
      );
  }

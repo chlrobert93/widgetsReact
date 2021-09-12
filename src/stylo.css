@@ -1,0 +1,24 @@
+*{
+    margin:0;
+    padding: 0;
+    /*Lo que hace es cambiar el modelo del cuadro para que los bordes y los
+     padding ya no se agregen al ancho total o la altura total que especificamos
+     para un cuadro*/
+    box-sizing: border-box;
+
+         
+}
+
+.acordion{
+    position:absolute;
+    padding: 15px 40px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    overflow: auto;
+    
+}
+
+
+
